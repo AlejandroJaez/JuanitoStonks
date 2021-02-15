@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 import os
 from dotenv import load_dotenv
+from utils import stock_parser
 load_dotenv()
 
 USERNAME = os.getenv('USERNAME')
@@ -42,7 +43,7 @@ async def hello(ctx):
 @bot.command(name='gbm')
 async def getstock(ctx, stock: str, **kwargs):
     """Consultar informacion de la bmv."""
-    result = gbm.get_symbol(stock)
+    result = stock_parser(gbm.get_symbol(stock))
     await ctx.send(result)
 
 

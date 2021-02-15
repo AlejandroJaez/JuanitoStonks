@@ -77,8 +77,4 @@ class GBM:
             symbol = list(filter(lambda person: stock.upper() in person['symbol'], self.get_market()))[0]
         except:
             symbol = list(filter(lambda person: stock.lower() in person['issueName'].lower(), self.get_market()))[0]
-        sign = ''
-        if symbol['valueChange'] > 0:
-            sign = '+'
-        info = f"```diff\n{symbol['issueName']} - {symbol['issueID']}\nPrecio: ${symbol['lastPrice']}\n{sign}{round(symbol['valueChange'],4)} {round(symbol['percentageChange'],2)}%\nVC: {symbol['bidVolume']} @ ${symbol['bidPrice']}\nVV: {symbol['askVolume']} @ ${symbol['askPrice']}```"
-        return info
+        return symbol
