@@ -40,7 +40,7 @@ async def hello(ctx):
     await ctx.send(response)
 
 
-@bot.command(name='gbm')
+@bot.command(name='bmv')
 async def getstock(ctx, stock: str, **kwargs):
     """Consultar informacion de la bmv."""
     result = stock_parser(gbm.get_symbol(stock))
