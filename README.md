@@ -1,1 +1,2 @@
-# Discord bot for the discord community of bmvbets
+# ARCHIVED
+## Follow the development at https://github.com/BMVBets/JuanitoStonks
